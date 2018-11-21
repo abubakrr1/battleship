@@ -1,0 +1,77 @@
+<!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title> Mini-Battleship! </title> <!-- this is the title of the game -->  
+		
+		<style> <!-- this contains the CSS of the tiles-->  
+		.tile {
+		border: 1px solid black;
+		background-color: orange;
+		padding: 10px 10px;
+		margin: 10px;
+		}
+		</style>
+		
+		
+    </head>
+    <body>
+	<h1> Let's play some Mini-Battleship! </h1> <!-- the title on the page--> 
+	<p> Welcome to Battleship, this is a very fun minigame! </p> 
+	<p> Enter your guess!: <input type="text" id="guess"></p> <!-- the place to enter your guess for where the ship is --> 
+	<section>
+
+	</section> 
+	
+	
+
+	
+	<br />
+	
+	<script>
+	var gameboard=[];
+	let btn=document.querySelector("button");
+	var userOutput=document.querySelector("section");
+	let counter = 6; <!-- starts the counter of the amount of guesses at 6 --> 
+	
+	for (i=0; i<20;i++) { <!-- this creates 20 tiles --> 
+	gameboard[i] = "<span class='tile'>&nbsp;</span>"; 
+	userOutput.innerHTML+=gameboard[i];
+	ship0=Math.floor((Math.random() * 18) + 1); <!-- this puts the ships location at a place from 1 to 18 --> 
+	var location1 = ship0; <!-- this is the first location -->
+	var location2 = ship0 + 1; <!-- this is the second location which is one over from the previous location --> 
+	var location3 = ship0 + 2; <!-- this is the third location which is two over from the first location --> 
+	}
+
+	for (i=0; i<6;i++) { <!-- this is the 6 times the game runs through --> 
+	counter-- <!-- this moves the counter down by 1 every time a guess is made --> 
+	}
+	if (guess= location1) { <!-- this says that if it gets the first location it will say it is a hit--> 
+	userOutput.innerHTML="That's a hit!";
+	}
+	if (guess= location2) { <!-- this says that if it hits the second location it will call it a hit--> 
+	userOutput.innerHTML="That's a hit!";
+	}
+	
+	if (guess= location3) { <!-- this says that if it hits the third location it will call it a hit --> 
+	userOutput.innerHTML="That's a hit!";
+	}
+	
+	else { <!-- this says that if it something else it won't be a hit --> 
+	userOutput.innerHTML="You missed!"; 
+	}
+
+	
+	</script>
+	
+	</body>
+	
+	</html>
+	
+	
+	
+	
+	
+	
+    </body>
+</html>
